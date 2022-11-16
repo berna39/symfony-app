@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %} Oops!{% endblock %}
+
+{% block body %} 
+    <div class="container">
+        <div class="row mt-5">
+            <div class="row">
+                <div class="mb-3 alert alert-danger text-center">
+                    <h3>You are not allowed to perform that action ! </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class"col-md-12">
+                    <h6 class="text-center">Homepage <a href="{{ path('app_articles') }}">here</a></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

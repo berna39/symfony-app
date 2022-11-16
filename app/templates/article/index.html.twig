@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block title %}Toto!{% endblock %}
+
+{% block body %} 
+    <div class="container">
+        <div class="row mt-5">
+            <div class="row">
+                {% if app.user %}
+                <div class="mb-3 alert alert-primary">
+                    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            {% endif %}
+            </div>
+            <div class="col-md-12">
+                <h5>Articles ({{ articles.getTotalItemCount }})</h5>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Short Description</th>
+                            <th>Image Link</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in articles %}
+                            <tr>
+                                <th>{{ item.id }}</th>
+                                <th>{{ item.title }}</th>
+                                <th>{{ item.shortDescription }}</th>
+                                <th>{{ item.picture }}</th>
+                                <th>
+                                    {% if app.user.isGranted('ROLE_ADMIN') %}
+                                    <a href="{{ path('app_articles_delete', {'id': item.id}) }}">Delete</a>
+                                    {% endif %}
+                                </th>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <th colspan="5" class="text-center">No product<th>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {{ knp_pagination_render(articles) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
