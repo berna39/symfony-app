@@ -28,7 +28,7 @@ Execute migrations
 php bin/console doctrine:migration:migrate
 ```
 
-App the app is available on localhost:8741 now, credentials are : admin -> [username : admin, password : root], 
+App the app is available on localhost:8741, and all the infastructure(mysql,apache,rabbitmq) is ready, credentials are : admin -> [username : admin, password : root], 
 moderator -> [username : moderator, password : moderator]
 
 Start partsing(downloading) articles
