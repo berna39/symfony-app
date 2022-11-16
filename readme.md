@@ -39,3 +39,5 @@ Start consuming messages with rabbitMQ
 ```
 php bin/console messenger:consume async
 ```
+
+With :heart:, Joseph :)
