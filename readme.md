@@ -37,5 +37,5 @@ php bin/console news:parse
 ```
 Start consuming messages with rabbitMQ
 ```
-php bin/console messenger:consume
+php bin/console messenger:consume async
 ```
