@@ -28,9 +28,9 @@ Execute migrations
 php bin/console doctrine:migration:migrate
 ```
 
-Seed data
+Seeding data
 ```
-php bin/console doctrine:migration:migrate
+php bin/console doctrine:fixtures:load
 ```
 
 App the app is available on localhost:8741, and all the infastructure(mysql,apache,rabbitmq) is ready, credentials are : admin -> [username : admin, password : root], 
